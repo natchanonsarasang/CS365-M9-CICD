@@ -2,7 +2,7 @@ const request = require('supertest');
 const app = require('./app');
 
 describe('Test the app', () => {
-  test('Get / should return Hello, World!', async () => {
+  test('Get / should return Fundamentals of DevOps!', async () => {
     const response = await request(app).get('/');
     expect(response.statusCode).toBe(200);
     expect(response.text).toBe('Fundamentals of DevOps!');
@@ -11,7 +11,7 @@ describe('Test the app', () => {
   test('Get /name/Bob should return Hello, Bob!', async () => {
     const response = await request(app).get('/name/Bob');
     expect(response.statusCode).toBe(200);
-    expect(response.text).toBe('Fundamentals of DevOps!');
+    expect(response.text).toBe('Hello, Bob!');
   });
 
   const maliciousUrl = '/name/%3Cscript%3Ealert("hi")%3C%2Fscript%3E';
